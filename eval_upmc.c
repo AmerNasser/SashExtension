@@ -18,9 +18,10 @@ int VAL_STRING =0;
 
 char* getExpression(char* arg)
 {
+	int i;
     char * res = malloc(strlen((const char*)arg)*sizeof(char));
     char * tmp = res;
-    for(int i =0;i<strlen(arg) - 2;i++){
+    for(i =0;i<strlen(arg) - 2;i++){
         *tmp = *(arg +i + 1);
         tmp++;
     }
