@@ -9,10 +9,25 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 
 #include "eval_upmc.h"
 
 int VAL_STRING =0;
+
+
+char* getExpression(char* arg)
+{
+    char * res = malloc(strlen((const char*)arg)*sizeof(char));
+    char * tmp = res;
+    for(int i =0;i<strlen(arg) - 2;i++){
+        *tmp = *(arg +i + 1);
+        tmp++;
+    }
+    *tmp ='\0';
+    
+    return res;
+}
 
 
 void error_message(const char* string) {

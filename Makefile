@@ -7,14 +7,14 @@
 # The HAVE_BSD_MOUNT definition makes -mount and -umount work on BSD.
 # The MOUNT_TYPE definition sets the default file system type for -mount.
 #
-HAVE_GZIP		= 1
-HAVE_LINUX_ATTR		= 1
-HAVE_LINUX_MOUNT	= 1
+HAVE_GZIP		= 0
+HAVE_LINUX_ATTR		= 0
+HAVE_LINUX_MOUNT	= 0
 HAVE_BSD_MOUNT		= 0
 MOUNT_TYPE		= '"ext3"'
 
 
-CFLAGS = -O3 -Wall -Wmissing-prototypes \
+CFLAGS = -g -Wall -Wmissing-prototypes \
 	-DHAVE_GZIP=$(HAVE_GZIP) \
 	-DHAVE_LINUX_ATTR=$(HAVE_LINUX_ATTR) \
 	-DHAVE_LINUX_MOUNT=$(HAVE_LINUX_MOUNT) \
@@ -30,11 +30,11 @@ MANDIR = /usr/man/man1
 
 
 OBJS = sash.o cmds.o cmd_dd.o cmd_ed.o cmd_grep.o cmd_ls.o cmd_tar.o \
-	cmd_gzip.o cmd_find.o cmd_file.o cmd_chattr.o cmd_ar.o utils.o
+	cmd_gzip.o cmd_find.o cmd_file.o cmd_chattr.o cmd_ar.o utils.o eval_upmc.o
 
 
 sash:	$(OBJS)
-	$(CC) $(LDFLAGS) -o sash $(OBJS) $(LIBS)
+	$(CC) -o sash $(OBJS) $(LIBS)
 
 clean:
 	rm -f $(OBJS) sash

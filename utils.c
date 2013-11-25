@@ -648,19 +648,6 @@ match(const char * text, const char * pattern)
  */
 
 
-char* getExpression(char* arg)
-{
-    char * res = malloc(strlen(arg)*sizeof(char));
-    char * tmp = res;
-    for(int i =0;i<strlen(arg) - 2;i++){
-        *tmp = *(arg +i + 1);
-        tmp++;
-    }
-    *tmp ='\0';
-    
-    return res;
-}
-
 
 BOOL
 makeArgs(const char * cmd, int * retArgc, const char *** retArgv)

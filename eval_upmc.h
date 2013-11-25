@@ -42,11 +42,26 @@ typedef struct {
     parser_function_callback	function_cb;
 } parser_data;*/
 
+char* getExpression(char* arg);
 
+void error_message(const char* string) ;
+
+char eat_char(const char* string, char c) ;
+
+int eat_int(const char* string) ;
+
+Expr* factor(const char* string, Expr* expr) ;
+
+Expr* factor_tail(const char* string, Expr* expr) ;
+
+Expr* term(const char* string, Expr* expr) ;
+
+Expr* term_tail(const char* string, Expr* expr) ;
 
 Expr* parse(const char* string) ;
 
-int eval(Expr* expr);
+
+int eval(Expr* expr) ;
 
 
 
