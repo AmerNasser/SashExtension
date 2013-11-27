@@ -97,6 +97,8 @@ extern	void	do_echo(int argc, const char ** argv);
 //ajoutée
 extern	void	do_test(int argc, const char ** argv);
 
+extern	void	do_arith(int argc, const char ** argv);
+
 
 extern	void	do_kill(int argc, const char ** argv);
 extern	void	do_grep(int argc, const char ** argv);
@@ -132,19 +134,19 @@ extern	int		fullRead(int fd, char * buf, int len);
 extern	BOOL		match(const char * text, const char * pattern);
 
 extern	const char *	buildName
-	(const char * dirName, const char * fileName);
+(const char * dirName, const char * fileName);
 
 extern	BOOL	makeArgs
-	(const char * cmd, int * argcPtr, const char *** argvPtr);
+(const char * cmd, int * argcPtr, const char *** argvPtr);
 
 extern	BOOL	copyFile
-	(const char * srcName, const char * destName, BOOL setModes);
+(const char * srcName, const char * destName, BOOL setModes);
 
 extern	BOOL	makeString
-	(int argc, const char ** argv, char * buf, int bufLen);
+(int argc, const char ** argv, char * buf, int bufLen);
 
 extern	int	expandWildCards
-	(const char * fileNamePattern, const char *** retFileTable);
+(const char * fileNamePattern, const char *** retFileTable);
 
 
 /*

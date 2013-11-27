@@ -40,6 +40,30 @@ do_echo(int argc, const char ** argv)
     
 	fputc('\n', stdout);
 }
+char* 
+opertionOnString(char* src);
+char* arith(char* src);
+
+void
+do_arith(int argc, const char ** argv)
+{
+	BOOL	espace;
+	while (argc-- > 1)
+	{
+		if (!espace)
+			fputc(' ', stdout);
+		
+		espace = FALSE;
+		argv++;
+		if (*(*argv + strlen(*argv) -1) == '"' && **argv == '"'){
+			fprintf(stdout,"%s",opertionOnString((char*)*(argv)));
+		} else {
+			fprintf(stdout,"%s",arith((char*)*(argv)));
+		}
+	}
+	
+	fputc('\n', stdout);
+}
 
 /*
  Expression
